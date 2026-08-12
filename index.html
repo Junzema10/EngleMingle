@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Would You Rather? - English Conversation Helper</title>
+  <!-- Modern Bold Typography: Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- CSS Styling -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Top Decorative Header / Branding -->
+  <header class="app-header">
+    <div class="brand">
+      <span class="icon-bubble"><i data-lucide="message-square-more"></i></span>
+      <div class="brand-titles">
+        <span class="brand-text">Engle Mingle</span>
+        <span class="brand-subtext">Would You Rather?</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="btn-show-history" class="btn-secondary compact">
+        <i data-lucide="archive"></i> History
+      </button>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- STEP 1: CREW REGISTRATION -->
+    <section id="step-setup" class="app-screen active">
+      <div class="card setup-card">
+        <div class="card-tag">STEP 01</div>
+        <h2>Who is speaking today?</h2>
+        <p class="subtitle">Enter the English names of all participants to get started.</p>
+        
+        <form id="add-member-form" class="setup-form" onsubmit="return false;">
+          <div class="input-wrapper">
+            <input type="text" id="member-input" placeholder="e.g., Jimmy, Sarah, Leo..." required maxlength="20">
+            <button type="submit" id="btn-add-member" class="btn-accent">
+              <i data-lucide="plus"></i> Add
+            </button>
+          </div>
+        </form>
+
+        <div class="members-container">
+          <h3>Crew List (<span id="member-count">0</span>)</h3>
+          <div id="members-list" class="members-list">
+            <!-- Dynamic member badges will be added here -->
+            <p class="placeholder-text">No members added yet.</p>
+          </div>
+        </div>
+
+        <div class="setup-actions">
+          <button id="btn-start-session" class="btn-primary full-width" disabled>
+            Start Session <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2: CATEGORY SELECTION -->
+    <section id="step-categories" class="app-screen">
+      <div class="screen-header">
+        <button class="btn-back btn-secondary compact" onclick="goToScreen('setup')">
+          <i data-lucide="chevron-left"></i> Back to Crew
+        </button>
+        <h2>Select Conversation Category</h2>
+      </div>
+
+      <div class="categories-grid" id="categories-grid">
+        <!-- Categories will be generated dynamically -->
+      </div>
+    </section>
+
+    <!-- STEP 3: DISCUSSION ROOM -->
+    <section id="step-discussion" class="app-screen">
+      <div class="discussion-layout">
+        
+        <!-- Left Side: Topic and Timer -->
+        <div class="discussion-main">
+          <div class="screen-header">
+            <button class="btn-back btn-secondary compact" onclick="goToScreen('categories')">
+              <i data-lucide="grid"></i> Change Category
+            </button>
+            <span class="category-badge" id="current-category-badge">GENERAL</span>
+          </div>
+
+          <!-- Question Display (Neon Block Style) -->
+          <div class="question-card" id="question-card">
+            <div class="speech-label">WOULD YOU RATHER...</div>
+            <h1 id="topic-question">Would you rather have more time or more money?</h1>
+            <div class="follow-up-box">
+              <span class="follow-up-tag">Follow-up:</span>
+              <p id="topic-followup">Would you play a lottery that had a prize of time?</p>
+            </div>
+          </div>
+
+          <!-- Session Controls -->
+          <div class="control-strip">
+            <button id="btn-next-topic" class="btn-secondary">
+              <i data-lucide="refresh-cw"></i> Draw Next Topic
+            </button>
+            <button id="btn-finish-topic" class="btn-accent">
+              <i data-lucide="pen-tool"></i> End & Record Opinions
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Side: Turn Tracker, Timer & Speakers -->
+        <div class="discussion-sidebar">
+          
+          <!-- Timer Widget -->
+          <div class="card timer-card">
+            <div class="timer-display">
+              <span id="timer-digits">02:00</span>
+            </div>
+            <div class="timer-controls">
+              <button id="btn-timer-toggle" class="btn-secondary circular" title="Start/Pause">
+                <i data-lucide="play" id="icon-timer-state"></i>
+              </button>
+              <button id="btn-timer-reset" class="btn-secondary circular" title="Reset">
+                <i data-lucide="rotate-ccw"></i>
+              </button>
+              <div class="timer-settings">
+                <select id="timer-duration-select" class="custom-select">
+                  <option value="30">30 Secs</option>
+                  <option value="60">1 Min</option>
+                  <option value="120" selected>2 Mins</option>
+                  <option value="180">3 Mins</option>
+                  <option value="300">5 Mins</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Speaker Ordering Widget -->
+          <div class="card speakers-card">
+            <div class="card-header">
+              <h3>Speaker Rotation</h3>
+              <button id="btn-reshuffle" class="btn-secondary compact icon-only" title="Reshuffle Order">
+                <i data-lucide="shuffle"></i>
+              </button>
+            </div>
+            
+            <div id="speaker-status-box" class="speaker-status-box">
+              <!-- Randomizer placeholder -->
+              <div class="shuffle-animation-container" id="shuffle-area">
+                <p>Order is not set yet.</p>
+                <button id="btn-roll-speakers" class="btn-primary">
+                  <i data-lucide="dices"></i> Determine Order
+                </button>
+              </div>
+
+              <!-- Speaker Queue List -->
+              <div class="speakers-queue-list hidden" id="speakers-queue-list">
+                <!-- Members queue -->
+              </div>
+            </div>
+
+            <div class="speaker-actions hidden" id="speaker-actions">
+              <button id="btn-next-speaker" class="btn-primary full-width">
+                Next Speaker <i data-lucide="chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STEP 4: RECORD OPINION (POPUP/MODAL) -->
+    <div id="opinion-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Record Crew's Thoughts</h2>
+          <button class="btn-close" onclick="closeModal('opinion-modal')">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="summary-topic-display">
+            <span class="topic-meta-tag" id="record-category">GENERAL</span>
+            <p class="summary-question" id="record-question">Would you rather have more time or more money?</p>
+          </div>
+
+          <form id="opinion-form" onsubmit="return false;">
+            <!-- Vote tracking -->
+            <div class="vote-tracker-section">
+              <label class="form-label">Quick Vote Ratio (Optional)</label>
+              <div class="vote-inputs">
+                <div class="vote-option-group">
+                  <span class="vote-lbl">Option A (Left):</span>
+                  <input type="number" id="vote-option-a" min="0" value="0" class="vote-count-input">
+                </div>
+                <div class="vote-option-group">
+                  <span class="vote-lbl">Option B (Right):</span>
+                  <input type="number" id="vote-option-b" min="0" value="0" class="vote-count-input">
+                </div>
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="notes-section">
+              <label for="opinion-notes" class="form-label">Discussion Notes & Crew Thoughts</label>
+              <textarea id="opinion-notes" placeholder="Write down funny answers, key expressions used, or overall thoughts here..." rows="5"></textarea>
+            </div>
+
+            <div class="modal-actions">
+              <button type="button" class="btn-secondary" onclick="closeModal('opinion-modal')">Cancel</button>
+              <button type="submit" id="btn-save-opinion" class="btn-accent">Save to Archive</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5: ARCHIVE / HISTORY LIST VIEW -->
+    <section id="step-history" class="app-screen">
+      <div class="screen-header">
+        <button class="btn-back btn-secondary compact" onclick="closeHistory()">
+          <i data-lucide="chevron-left"></i> Back to Room
+        </button>
+        <h2>Conversation History Archive</h2>
+        <button id="btn-clear-history" class="btn-secondary compact text-danger">
+          <i data-lucide="trash-2"></i> Clear All
+        </button>
+      </div>
+
+      <div class="history-container" id="history-container">
+        <!-- Archived items will list here -->
+        <p class="placeholder-text">No discussions recorded yet.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Turn Notification Popup/Toast (Seq speaker popups) -->
+  <div class="speaker-popup-overlay" id="speaker-popup">
+    <div class="speaker-popup-card">
+      <div class="popup-icon"><i data-lucide="mic"></i></div>
+      <div class="popup-sub">NEXT SPEAKER</div>
+      <h1 class="popup-name" id="popup-speaker-name">Jimmy</h1>
+      <p class="popup-instruction">It's your turn to answer the topic! 🗣️</p>
+      <button id="btn-close-popup" class="btn-accent">Let's Speak!</button>
+    </div>
+  </div>
+
+  <!-- Javascript Core Logic -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
