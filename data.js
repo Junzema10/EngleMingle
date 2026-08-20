@@ -1,338 +1,458 @@
 const topicsData = {
   general: [
+    // Original General (10)
     {
       question: "Would you rather have more time or more money?",
-      followUp: "Would you play a lottery that had a prize of time?"
+      followUp: "Would you play a lottery where the prize was extra time?"
     },
     {
-      question: "Would you rather be able to sing beautifully or speak fluently in a chosen language?",
+      question: "Would you rather be able to sing beautifully or speak any foreign language fluently?",
       followUp: "Which do you think is harder to master?"
     },
     {
       question: "Would you rather be the world’s fastest runner or own the world’s fastest car?",
-      followUp: "Which do you think would be most useful?"
+      followUp: "Which do you think would be more useful?"
     },
     {
-      question: "Would you rather be able to fly or swim without needing to hold your breath?",
+      question: "Would you rather be able to fly or breathe underwater?",
       followUp: "What’s the longest you can hold your breath for?"
     },
     {
-      question: "Would you rather go to the cinema or watch a concert?",
+      question: "Would you rather go to the cinema or attend a concert?",
       followUp: "What’s your favourite film?"
     },
     {
-      question: "Would you rather be stuck inside on a good day or stuck outside on a bad day?",
-      followUp: "What do you do when the weather’s bad?"
+      question: "Would you rather be stuck indoors on a beautiful day or stuck outdoors in terrible weather?",
+      followUp: "What do you like to do when the weather is bad?"
     },
     {
-      question: "Would you rather be poor and happy or miserable and rich?",
+      question: "Would you rather be poor but happy, or rich but miserable?",
       followUp: "Can money buy happiness?"
     },
     {
-      question: "Would you rather travel to somewhere relaxing or somewhere interesting?",
-      followUp: "Where did you last go on holiday?"
+      question: "Would you rather travel to a relaxing destination or an exciting one?",
+      followUp: "Where did you go for your last vacation?"
     },
     {
-      question: "Would you rather play video games or play sports?",
-      followUp: "What was the last thing you played?"
+      question: "Would you rather play video games or sports?",
+      followUp: "What was the last game or sport you played?"
     },
     {
-      question: "Would you rather be super fast or super strong?",
-      followUp: "What would you do with that power?"
-    }
-  ],
-  funny: [
+      question: "Would you rather have super speed or super strength?",
+      followUp: "What would you do with your superpower?"
+    },
+    // Original Clothing (10)
     {
-      question: "Would you rather be a mouse on holiday or a lion at work?",
-      followUp: "Which do you think would be more difficult?"
+      question: "Would you rather wear too many layers in the summer, or not enough clothes in the winter?",
+      followUp: "What is your favorite winter outfit?"
     },
     {
-      question: "Would you rather have a house made of chocolate or a house made of french fries?",
-      followUp: "Which do you think would be easier to clean?"
+      question: "Would you rather wear clothes that are comfortable but look bad, or clothes that look amazing but are very uncomfortable?",
+      followUp: "What is your favorite item of clothing?"
     },
     {
-      question: "Would you rather have the power to make others laugh or to make yourself laugh?",
-      followUp: "Are there any comedians you know who already have this power?"
+      question: "Would you rather donate your old clothes to charity or sell them online?",
+      followUp: "How often do you clean out your closet?"
     },
     {
-      question: "Would you rather stink or have everybody else stink (except you)?",
-      followUp: "How much deodorant do you think would be needed to hide the smell?"
+      question: "Would you rather buy brand-new clothes or shop at second-hand stores?",
+      followUp: "What is the best deal you've ever gotten on clothing?"
     },
     {
-      question: "Would you rather marry a fish or a potato?",
-      followUp: "Which do you think you would argue with more?"
+      question: "Would you rather repair your own clothes or just replace them?",
+      followUp: "Do you know how to sew or fix a button?"
     },
     {
-      question: "Would you rather fight Santa or a reindeer?",
-      followUp: "Do you think you’d still get presents after?"
+      question: "Would you rather wear a stylish costume or a hilarious one to a costume party?",
+      followUp: "What is the best costume you have ever worn?"
     },
     {
-      question: "Would you rather dance with a sloth or a chimpanzee?",
-      followUp: "Do you think they would enjoy the dance?"
+      question: "Would you rather have a minimalist wardrobe of clothes you love, or a huge closet of clothes you rarely wear?",
+      followUp: "Which article of clothing is your absolute favorite?"
     },
     {
-      question: "Would you rather slip on ice or a banana peel?",
-      followUp: "Which one do you think is funnier?"
+      question: "Would you rather wear a beanie or gloves in the snow?",
+      followUp: "What do you usually wear when it snows?"
     },
     {
-      question: "Would you rather laugh so hard you cry or cry so hard you laugh?",
-      followUp: "Do you often cry when you laugh?"
+      question: "Would you rather make all of your own clothes or borrow everything you wear?",
+      followUp: "Have you ever tried making or customizing your clothes?"
     },
     {
-      question: "Would you rather have an onion for a head or a cabbage?",
-      followUp: "Do you think it would be hard to wash your face?"
-    }
-  ],
-  difficult: [
+      question: "Would you rather wear an outfit that is all the same color, or all the same material?",
+      followUp: "What is your favorite clothing material (e.g., cotton, denim, silk)?"
+    },
+    // Original Geography (10)
     {
-      question: "Would you rather win £1,000,000 or have your friend win £3,000,000?",
-      followUp: "Do you think they’d let you win the money if they were in your shoes?"
+      question: "Would you rather live in a very hot climate or a very cold climate?",
+      followUp: "What is your ideal weather?"
     },
     {
-      question: "Would you rather travel to the past or to the future?",
-      followUp: "What about if you couldn’t return to the present?"
+      question: "Would you rather live in a wealthy country or a country with beautiful natural scenery?",
+      followUp: "Which country would you love to visit for its nature?"
     },
     {
-      question: "Would you rather have lots of money but not be able to buy food or have plenty of food but no money?",
-      followUp: "Is there anyone you can think of who would pick the opposite?"
+      question: "Would you rather visit five countries in five days, or spend two weeks exploring just two countries?",
+      followUp: "Do you prefer fast-paced travel or slow travel?"
     },
     {
-      question: "Would you rather be best friends with a celebrity or have your dream job?",
-      followUp: "Have you ever met a celebrity?"
+      question: "Would you rather live near a volcano or near a swamp?",
+      followUp: "Which environment sounds more dangerous to you?"
     },
     {
-      question: "Would you rather fall into a cactus or walk on glass?",
-      followUp: "Do you have a strong tolerance to pain?"
+      question: "Would you rather lead a small, wealthy country or a large, poor country?",
+      followUp: "What would be your first act as a national leader?"
     },
     {
-      question: "Would you rather climb Mount Everest or run three marathons?",
-      followUp: "What’s the most exercise you’ve ever done?"
+      question: "Would you rather live near the ocean or in the quiet countryside?",
+      followUp: "How often do you go to the beach?"
     },
     {
-      question: "Would you rather not shower for a week or not brush your teeth for a week?",
-      followUp: "What’s the longest you’ve gone without showering before?"
+      question: "Would you rather live in a beautiful neighborhood far from your workplace, or in a rough neighborhood close to work?",
+      followUp: "How long is your daily commute?"
     },
     {
-      question: "Would you rather be trapped in a room full of spiders or snakes?",
-      followUp: "How long do you think you could stay in there for?"
+      question: "Would you rather live in a small, quiet town or a bustling big city?",
+      followUp: "What are the pros and cons of your current neighborhood?"
     },
     {
-      question: "Would you rather play a sport professionally or be an actor / actress?",
-      followUp: "Which do you think pays more?"
+      question: "Would you rather use a navigation app that always gives wrong directions, or have no navigation tools at all?",
+      followUp: "Have you ever gotten seriously lost?"
     },
     {
-      question: "Would you rather be a king for a day or a mayor for a month?",
-      followUp: "What would you do in that time?"
-    }
-  ],
-  weird: [
+      question: "Would you rather travel by train or by plane?",
+      followUp: "Do you enjoy train rides?"
+    },
+    // Original Food (10)
     {
-      question: "Would you rather have a pillow as a pet or a piece of cheese?",
-      followUp: "Which do you think would look funnier when taking for a walk?"
+      question: "Would you rather eat cheese with chocolate or beef with ice cream?",
+      followUp: "What is the weirdest food combination you actually enjoy?"
     },
     {
-      question: "Would you rather be abducted by aliens or kidnapped by vampires?",
-      followUp: "Which is more likely?"
+      question: "Would you rather eat hamburgers every day or never eat them again?",
+      followUp: "How long do you think you could survive eating only burgers?"
     },
     {
-      question: "Would you rather be a plant or a rock?",
-      followUp: "Do you think life would be easier than being a human?"
+      question: "Would you rather eat an amazing meal at a sketchy restaurant, or a terrible meal at a luxury restaurant?",
+      followUp: "What is the most memorable meal you've ever had?"
     },
     {
-      question: "Would you rather have a pig’s brain in a human body or a human brain in a pig’s body?",
-      followUp: "Do you think it would be fun to switch for a short while?"
+      question: "Would you rather be extremely hungry or extremely thirsty?",
+      followUp: "What’s the longest you’ve gone without eating?"
     },
     {
-      question: "Would you rather wear a hat made of jam or shoes made of chocolate?",
-      followUp: "Would you eat it after you have finished wearing it?"
-    },
-    {
-      question: "Would you rather live on the moon or at the bottom of the sea?",
-      followUp: "What kind of work could you do there?"
-    },
-    {
-      question: "Would you rather be a cartoon or a puppet?",
-      followUp: "What’s your favourite cartoon?"
-    },
-    {
-      question: "Would you rather be sat next to a dog or a chicken on a plane?",
-      followUp: "Would it be better than sitting next to a human?"
-    },
-    {
-      question: "Would you rather live in a world where everything is upside down or where everything is blue?",
-      followUp: "What would some of the challenges be living in such a world?"
-    },
-    {
-      question: "Would you rather clean your teeth with spaghetti or a banana?",
-      followUp: "What do you think your dentist would say?"
-    }
-  ],
-  food: [
-    {
-      question: "Would you rather eat cheese and chocolate or beef and icecream?",
-      followUp: "What’s the worst food combination you’ve ever made?"
-    },
-    {
-      question: "Would you rather eat hamburgers everyday or never again?",
-      followUp: "Which option do you think is healthier?"
-    },
-    {
-      question: "Would you rather eat an amazing meal in a bad restaurant or a bad meal in an amazing restaurant?",
-      followUp: "What’s the best restaurant you’ve ever eaten at?"
-    },
-    {
-      question: "Would you rather be hungry or thirsty?",
-      followUp: "What’s the longest you’ve gone without food and drink?"
-    },
-    {
-      question: "Would you rather go out for dinner or eat a takeaway?",
-      followUp: "What was the last thing you ate from a takeaway?"
+      question: "Would you rather go out for dinner or order takeout?",
+      followUp: "What is your go-to takeout food?"
     },
     {
       question: "Would you rather eat ice cream on a hot day or drink hot chocolate on a cold day?",
       followUp: "Which flavour of ice cream is your favourite?"
     },
     {
-      question: "Would you rather be a chef or a waiter?",
-      followUp: "Which do you think has the harder job?"
+      question: "Would you rather be a chef or a server?",
+      followUp: "Do you enjoy cooking for others?"
     },
     {
-      question: "Would you rather eat three days worth of food in a day or a day’s worth of food over three days?",
-      followUp: "Which do you think is healthier?"
+      question: "Would you rather eat three days' worth of food in a single day, or stretch one day's worth of food over three days?",
+      followUp: "What’s the most food you’ve ever eaten in one sitting?"
     },
     {
-      question: "Would you rather eat chocolate for an entire day or broccoli?",
+      question: "Would you rather eat only chocolate for an entire day, or only broccoli?",
       followUp: "What’s the most chocolate you’ve ever eaten?"
     },
     {
       question: "Would you rather eat peas with chopsticks or soup with a fork?",
-      followUp: "Have you ever tried to eat with chopsticks? Did it work?"
+      followUp: "How good are you at using chopsticks?"
+    }
+  ],
+  funny: [
+    // Original Funny (10)
+    {
+      question: "Would you rather be a mouse on vacation or a lion at work?",
+      followUp: "Which do you think would be more stressful?"
+    },
+    {
+      question: "Would you rather live in a house made of chocolate or a house made of french fries?",
+      followUp: "Which do you think would be easier to maintain?"
+    },
+    {
+      question: "Would you rather have the ability to make anyone laugh or always be able to make yourself laugh?",
+      followUp: "Who is the funniest comedian you know?"
+    },
+    {
+      question: "Would you rather constantly stink or have everyone else stink (while you smell fine)?",
+      followUp: "How would you survive in a world where everyone smells bad?"
+    },
+    {
+      question: "Would you rather marry a fish or a potato?",
+      followUp: "Which one would make a better listener?"
+    },
+    {
+      question: "Would you rather fight Santa Claus or one of his reindeer?",
+      followUp: "Do you think you'd end up on the naughty list forever?"
+    },
+    {
+      question: "Would you rather dance with a sloth or a chimpanzee?",
+      followUp: "Who do you think would have better dance moves?"
+    },
+    {
+      question: "Would you rather slip on ice or slip on a banana peel?",
+      followUp: "Which fall would be more embarrassing?"
+    },
+    {
+      question: "Would you rather laugh so hard you cry or cry so hard you laugh?",
+      followUp: "When was the last time you laughed until you cried?"
+    },
+    {
+      question: "Would you rather have an onion or a cabbage for a head?",
+      followUp: "How would you style your 'hair'?"
+    },
+    // Original Weird (10)
+    {
+      question: "Would you rather have a pillow or a piece of cheese as a pet?",
+      followUp: "How would you walk a pet pillow?"
+    },
+    {
+      question: "Would you rather be abducted by aliens or kidnapped by vampires?",
+      followUp: "Which creature do you think would be friendlier?"
+    },
+    {
+      question: "Would you rather be a plant or a rock?",
+      followUp: "Do you think life as a plant would be peaceful?"
+    },
+    {
+      question: "Would you rather have a pig’s brain in a human body or a human brain in a pig’s body?",
+      followUp: "Which of these would be harder to live with?"
+    },
+    {
+      question: "Would you rather wear a hat made of jam or shoes made of chocolate?",
+      followUp: "What would you do on a hot, sunny day?"
+    },
+    {
+      question: "Would you rather live on the moon or at the bottom of the ocean?",
+      followUp: "What do you think the view would be like?"
+    },
+    {
+      question: "Would you rather be a cartoon character or a puppet?",
+      followUp: "What is your favorite animated movie or show?"
+    },
+    {
+      question: "Would you rather sit next to a dog or a chicken on a long flight?",
+      followUp: "What is the worst flight experience you've had?"
+    },
+    {
+      question: "Would you rather live in a world where everything is upside down or where everything is blue?",
+      followUp: "How would you eat in an upside-down world?"
+    },
+    {
+      question: "Would you rather brush your teeth with dry spaghetti or a banana?",
+      followUp: "What do you think your dentist would say?"
     }
   ],
   controversial: [
+    // Original Controversial (10)
     {
-      question: "Would you rather end world hunger or have your friends and family live forever?",
-      followUp: "Do we do enough to help those who are hungry?"
+      question: "Would you rather end world hunger or grant your friends and family immortality?",
+      followUp: "What is the best way to help end world hunger?"
     },
     {
-      question: "Would you rather everyone live forever or have people die painlessly at a certain age?",
-      followUp: "How long would the planet last if we all lived forever?"
+      question: "Would you rather everyone live forever, or have everyone pass away painlessly at a set age?",
+      followUp: "What would be the biggest problem in a world where no one dies?"
     },
     {
-      question: "Would you rather imprison an innocent person or accidentally release a guilty person?",
-      followUp: "Have you ever been blamed for something you haven’t done?"
+      question: "Would you rather wrongfully imprison an innocent person, or let a guilty person go free?",
+      followUp: "Have you ever been falsely accused of something?"
     },
     {
-      question: "Would you rather kill one person to save a thousand or do nothing?",
-      followUp: "What’s the hardest decision you’ve ever had to make?"
+      question: "Would you rather sacrifice one person to save a thousand, or do nothing?",
+      followUp: "Do you think doing nothing makes you less responsible?"
     },
     {
-      question: "Would you rather eat a (recently) dead body to stay alive or stay hungry?",
-      followUp: "What’s the grossest thing you’ve ever eaten?"
+      question: "Would you rather resort to cannibalism to survive, or starve to death?",
+      followUp: "Have you seen any movies or read stories about extreme survival?"
     },
     {
-      question: "Would you rather legalise drugs or outlaw guns (in all countries)?",
-      followUp: "What are the gun laws in your country?"
+      question: "Would you rather legalize all recreational drugs or ban guns worldwide?",
+      followUp: "Do you think banning guns reduces crime?"
     },
     {
-      question: "Would you rather allow stem cell research (and possibly save lives) or disallow the research (possibly resulting in casualties)?",
+      question: "Would you rather allow stem cell research to save lives, or ban it because of ethical concerns?",
       followUp: "How much do you know about stem cell research?"
     },
     {
-      question: "Would you rather have evolution taught in schools or creationism?",
-      followUp: "Which did you learn in school?"
+      question: "Would you rather have only evolution taught in schools, or only creationism?",
+      followUp: "Do you think schools should teach both?"
     },
     {
-      question: "Would you rather everyone have the right to marry or just heterosexuals?",
-      followUp: "When did you last attend a wedding?"
+      question: "Would you rather support marriage equality for everyone, or restrict marriage to traditional definitions?",
+      followUp: "Do you think marriage is still an important institution today?"
     },
     {
-      question: "Would you rather everyone have access to healthcare or only those that can afford it?",
-      followUp: "When did you last go to the hospital?"
+      question: "Would you rather have universal healthcare for everyone, or a system where only those who can afford it get care?",
+      followUp: "How does the healthcare system work in your country?"
+    },
+    // Original Difficult (10)
+    {
+      question: "Would you rather win $1,000,000 or have your best friend win $3,000,000?",
+      followUp: "If they won, do you think they would share it with you?"
+    },
+    {
+      question: "Would you rather travel to the past or the future?",
+      followUp: "If it were a one-way trip, which would you choose?"
+    },
+    {
+      question: "Would you rather have unlimited money but never be able to buy food, or have unlimited food but absolutely no money?",
+      followUp: "How would you survive in either situation?"
+    },
+    {
+      question: "Would you rather be best friends with a celebrity or have your dream job?",
+      followUp: "Have you ever met a celebrity?"
+    },
+    {
+      question: "Would you rather fall into a cactus or walk on broken glass?",
+      followUp: "Do you have a high pain tolerance?"
+    },
+    {
+      question: "Would you rather climb Mount Everest or run three marathons back-to-back?",
+      followUp: "What is the most physically challenging thing you've ever done?"
+    },
+    {
+      question: "Would you rather not shower for a week or not brush your teeth for a week?",
+      followUp: "What’s the longest you’ve ever gone without a shower?"
+    },
+    {
+      question: "Would you rather be trapped in a room full of spiders or a room full of snakes?",
+      followUp: "How long do you think you could survive in that room?"
+    },
+    {
+      question: "Would you rather be a professional athlete or a famous actor/actress?",
+      followUp: "Which career sounds more exciting to you?"
+    },
+    {
+      question: "Would you rather be a king for a day or the mayor of a major city for a month?",
+      followUp: "What is the first rule or law you would make?"
     }
   ],
-  clothing: [
+  business: [
     {
-      question: "Would you rather wear too many layers in summer or not enough in winter?",
-      followUp: "What do you usually wear when it’s really cold?"
+      question: "Would you rather work with a highly competent colleague who has a terrible personality, or a friendly, kind colleague who is bad at their job?",
+      followUp: "Which trait do you think is harder to tolerate in the long run?"
     },
     {
-      question: "Would you rather wear clothes that are comfortable or clothes that look good?",
-      followUp: "What’s the most comfortable clothing you own?"
+      question: "Would you rather have a boss who micromanages every detail of your work, or a boss who is completely hands-off and never gives guidance?",
+      followUp: "Which type of boss do you think is worse for your career growth?"
     },
     {
-      question: "Would you rather give unwanted clothes to charity or sell them?",
-      followUp: "What was the last item of clothing you got rid of?"
+      question: "Would you rather earn a very high salary but work 70 hours a week, or earn a modest salary and work strictly 40 hours a week with no overtime?",
+      followUp: "How much does free time contribute to your overall life satisfaction?"
     },
     {
-      question: "Would you rather buy clothes brand new or from a second-hand shop?",
-      followUp: "What’s the best bargain you’ve ever found?"
+      question: "Would you rather be the top performer at a small, unknown startup, or an average employee at a giant, prestigious global corporation?",
+      followUp: "Which option do you think offers better learning opportunities?"
     },
     {
-      question: "Would you rather fix your own clothes (e.g. darn a sock) or replace them?",
-      followUp: "Do you have any clothes that need fixing or replacing?"
+      question: "Would you rather work on a product you love but in a toxic workplace culture, or work in an amazing workplace culture on a product you find completely boring?",
+      followUp: "Can a great team culture make up for uninspiring work?"
     },
     {
-      question: "Would you rather wear something cool or something funny to a fancy dress party?",
-      followUp: "What’s the best fancy dress costume you’ve ever worn?"
+      question: "Would you rather give a 15-minute presentation to the entire executive team, or receive a very blunt, critical performance review from your direct manager?",
+      followUp: "Which of these situations makes you feel more anxious?"
     },
     {
-      question: "Would you rather have fewer clothes (that you love) or a wide collection of clothes (that aren’t your favourite)?",
-      followUp: "What item of clothing could you not live without?"
+      question: "Would you rather work 100% remotely from home forever, or work in a beautiful modern office with free gourmet meals and high-end perks?",
+      followUp: "What is the biggest challenge of working from home for you?"
     },
     {
-      question: "Would you rather wear a hat or gloves in the snow?",
-      followUp: "What do you usually wear when it snows?"
+      question: "Would you rather work at a company where you are expected to answer messages instantly at any hour, or a company where colleagues take days to reply to your emails?",
+      followUp: "How do you set healthy boundaries with communication at work?"
     },
     {
-      question: "Would you rather make all of your clothes or borrow all of your clothes?",
-      followUp: "What do you think the easiest thing to make would be?"
+      question: "Would you rather launch an imperfect product quickly to get user feedback, or delay the launch for months to ensure everything is polished to perfection?",
+      followUp: "Which approach do you think is riskier in today’s market?"
     },
     {
-      question: "Would you rather all of your outfit be the same colour or the same material?",
-      followUp: "What is your favourite material to wear?"
-    }
-  ],
-  geography: [
-    {
-      question: "Would you rather live somewhere hot or somewhere cold?",
-      followUp: "What’s the weather like where you live now?"
+      question: "Would you rather take a promotion that comes with a massive pay increase but extreme stress, or stay in your current comfortable role indefinitely?",
+      followUp: "What is your main motivation when seeking a promotion?"
     },
     {
-      question: "Would you rather live in a country with lots of money or beautiful scenery?",
-      followUp: "What do you think is the most beautiful country?"
+      question: "Would you rather complete a high-profile project entirely by yourself with double the workload, or collaborate with a slow team where you have to share all the credit?",
+      followUp: "Do you prefer working alone or in a team?"
     },
     {
-      question: "Would you rather visit five countries in five days or two countries in two weeks?",
-      followUp: "Where would you go?"
+      question: "Would you rather stay in a secure but completely unfulfilling job for the rest of your career, or take a massive pay cut to pursue a risky new career path you are passionate about?",
+      followUp: "How important is passion compared to financial security in a career?"
     },
     {
-      question: "Would you rather live near a volcano or near a swamp?",
-      followUp: "Which do you think would have cheaper property prices?"
+      question: "Would you rather be the hardest worker who gets zero public recognition, or the charismatic talker who gets promoted by taking credit for others' ideas?",
+      followUp: "How much does self-promotion matter in your current workplace?"
     },
     {
-      question: "Would you rather be the leader of a small country with a lot of money or a big country with little money?",
-      followUp: "Which is the smallest country you know of that is wealthy?"
+      question: "Would you rather work in a company with absolutely no meetings where everything is done via text, or a company with daily video calls for every minor update?",
+      followUp: "What is your biggest frustration with office meetings?"
     },
     {
-      question: "Would you rather live near the ocean or near a field?",
-      followUp: "Are there any oceans near where you live now?"
+      question: "Would you rather work for an inspiring, supportive boss at a struggling company with a bad reputation, or a toxic, demotivating boss at a highly successful, world-class company?",
+      followUp: "Does a bad boss outweigh a great company name?"
     },
     {
-      question: "Would you rather live in a good neighbourhood that is far from work or in a bad neighbourhood that is close to work?",
-      followUp: "How do you usually travel to work?"
+      question: "Would you rather spend your career as an individual expert solving technical problems, or step into a managerial role resolving team conflicts and attending meetings?",
+      followUp: "Which path do you see yourself pursuing in the future?"
     },
     {
-      question: "Would you rather live in a small town or in a big city?",
-      followUp: "Where do you live now?"
+      question: "Would you rather work flexible hours where you might be messaged late at night, or a strict 9-to-5 schedule where you are completely cut off after hours?",
+      followUp: "How do you manage your work-life boundaries?"
     },
     {
-      question: "Would you rather have a maps app that only gives incorrect directions or have no maps app at all?",
-      followUp: "How is your sense of direction?"
+      question: "Would you rather communicate with clients and colleagues only through email, or only through phone calls and video chats?",
+      followUp: "Which form of communication makes you feel more comfortable?"
     },
     {
-      question: "Would you rather travel by train or by plane?",
-      followUp: "What’s the longest train journey you’ve ever taken?"
+      question: "Would you rather work at a company that offers unlimited unpaid vacation days, or a company with standard vacation days but a guaranteed annual bonus?",
+      followUp: "Does 'unlimited vacation' work in practice?"
+    },
+    {
+      question: "Would you rather work in a fast-paced environment where priorities change daily, or a highly structured company where making a simple change takes months of approvals?",
+      followUp: "Which type of environment suits your working style better?"
+    },
+    {
+      question: "Would you rather work at a company where everyone's exact salary is publicly listed, or a company where discussing pay is strictly forbidden?",
+      followUp: "Do you think salary transparency creates a healthier workplace?"
+    },
+    {
+      question: "Would you rather work in an open-plan office with zero privacy but lots of collaboration, or a private cubicle where you are isolated but can focus completely?",
+      followUp: "What is your ideal physical office setup?"
+    },
+    {
+      question: "Would you rather have AI automate 80% of your current daily tasks so you can focus on strategy, or keep doing everything manually to ensure job security?",
+      followUp: "Are you worried about AI replacing parts of your job?"
+    },
+    {
+      question: "Would you rather work in a noisy office with constant chatter and background music, or a dead-silent office where you can hear a pin drop?",
+      followUp: "How do you handle noise distractions while working?"
+    },
+    {
+      question: "Would you rather be overqualified for a job where you can finish all your work easily, or be promoted to a role that is slightly beyond your current skills and causes constant stress?",
+      followUp: "Do you prefer comfort or rapid growth in your career?"
+    },
+    {
+      question: "Would you rather wear a formal suit or business attire to work every day, or be allowed to wear sweatpants and hoodies but have clients take you less seriously?",
+      followUp: "Does how you dress at work affect your professional confidence?"
+    },
+    {
+      question: "Would you rather work in an understaffed team where you are constantly busy but highly valued, or an overstaffed team where you have very little to do all day?",
+      followUp: "Which scenario leads to faster burnout?"
+    },
+    {
+      question: "Would you rather take a two-week remote 'workation' from a tropical beach, or have a five-day vacation where you are completely offline?",
+      followUp: "Can you truly relax if you are working remotely from a vacation spot?"
+    },
+    {
+      question: "Would you rather spend your training budget on learning a new technical skill, or a workshop on public speaking and emotional intelligence?",
+      followUp: "Which type of skill has been more useful in your career?"
+    },
+    {
+      question: "Would you rather work as a freelancer with total freedom over your schedule but an unstable income, or a full-time corporate employee with a predictable paycheck but rigid rules?",
+      followUp: "Have you ever considered freelancing or starting your own business?"
     }
   ]
 };

@@ -92,16 +92,11 @@ const DOM = {
   btnClosePopup: document.getElementById('btn-close-popup')
 };
 
-// Category Metadatas for Rendering Cards
 const categoriesMeta = {
-  general: { name: 'General', desc: 'Easy and casual everyday choices.', icon: 'smile', color: 'cat-general' },
-  funny: { name: 'Funny', desc: 'Silly and hilarious dilemmas.', icon: 'laugh', color: 'cat-funny' },
-  difficult: { name: 'Difficult', desc: 'Tough choices that make you think.', icon: 'brain', color: 'cat-difficult' },
-  weird: { name: 'Weird', desc: 'Bizarre and magical situations.', icon: 'ghost', color: 'cat-weird' },
-  food: { name: 'Food', desc: 'Taste buds and eating style wars.', icon: 'utensils', color: 'cat-food' },
-  controversial: { name: 'Controversial', desc: 'Lightweight debating topics.', icon: 'users', color: 'cat-controversial' },
-  clothing: { name: 'Clothing', desc: 'Style and fashion catastrophes.', icon: 'shirt', color: 'cat-clothing' },
-  geography: { name: 'Geography', desc: 'Travel, weather, and world environments.', icon: 'globe', color: 'cat-geography' }
+  general: { name: 'General', desc: 'Everyday topics, food, travel, and clothing habits.', icon: 'smile', color: 'cat-general' },
+  funny: { name: 'Funny', desc: 'Hilarious dilemmas, bizarre choices, and silly situations.', icon: 'laugh', color: 'cat-funny' },
+  controversial: { name: 'Controversial', desc: 'Debating topics, tough decisions, and deep life questions.', icon: 'users', color: 'cat-controversial' },
+  business: { name: 'Business', desc: 'Workplace dilemmas, career choices, and office politics.', icon: 'briefcase', color: 'cat-business' }
 };
 
 // ==========================================

@@ -469,12 +469,8 @@ button {
 
 .category-card.cat-general::before { background-color: var(--accent-cyan); }
 .category-card.cat-funny::before { background-color: var(--accent-yellow); }
-.category-card.cat-difficult::before { background-color: var(--accent-orange); }
-.category-card.cat-weird::before { background-color: var(--accent-purple); }
-.category-card.cat-food::before { background-color: var(--accent-pink); }
 .category-card.cat-controversial::before { background-color: var(--accent-green); }
-.category-card.cat-clothing::before { background-color: var(--accent-orange); }
-.category-card.cat-geography::before { background-color: var(--accent-cyan); }
+.category-card.cat-business::before { background-color: var(--accent-orange); }
 
 .category-icon {
   width: 48px;
@@ -491,12 +487,8 @@ button {
 
 .category-card.cat-general .category-icon { color: var(--accent-cyan); }
 .category-card.cat-funny .category-icon { color: var(--accent-yellow); }
-.category-card.cat-difficult .category-icon { color: var(--accent-orange); }
-.category-card.cat-weird .category-icon { color: var(--accent-purple); }
-.category-card.cat-food .category-icon { color: var(--accent-pink); }
 .category-card.cat-controversial .category-icon { color: var(--accent-green); }
-.category-card.cat-clothing .category-icon { color: var(--accent-orange); }
-.category-card.cat-geography .category-icon { color: var(--accent-cyan); }
+.category-card.cat-business .category-icon { color: var(--accent-orange); }
 
 .category-info h3 {
   font-size: 1.4rem;
